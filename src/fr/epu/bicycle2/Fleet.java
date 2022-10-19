@@ -12,7 +12,7 @@ public class Fleet {
         trackableVehicles = new ArrayList<>();
     }
 
-    public void addVehicleToFleet(BorrowableElectricVehicle vehicle) {
+    public void addVehicleToFleet(Trackable vehicle) {
         this.trackableVehicles.add(vehicle);
     }
 
