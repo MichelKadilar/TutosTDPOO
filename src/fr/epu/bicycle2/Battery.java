@@ -1,4 +1,4 @@
-package fr.epu.bicycle;
+package fr.epu.bicycle2;
 
 public class Battery {
 
