@@ -2,7 +2,7 @@ package fr.epu.bicycle2;
 
 import java.util.Optional;
 
-public class ElectricVehicle {
+public class ElectricVehicle implements Trackable {
 
     protected int km;
 
@@ -27,6 +27,7 @@ public class ElectricVehicle {
         }
     }
 
+    @Override
     public Optional<Position> getPosition() {
         if (this.getCharge() > 0) {
             return Optional.of(this.gps.getPosition());

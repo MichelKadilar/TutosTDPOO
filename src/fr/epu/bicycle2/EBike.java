@@ -7,7 +7,7 @@ package fr.epu.bicycle2;
  * @see GPS
  * @see Battery
  */
-public class EBike extends ElectricVehicle {
+public class EBike extends BorrowableElectricVehicle {
     public static final int INITIAL_DISTANCE = 1;
 
     public EBike() {

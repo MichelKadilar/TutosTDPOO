@@ -7,7 +7,7 @@ package fr.epu.bicycle2;
  * @see GPS
  * @see Battery
  */
-public class Scooter extends ElectricVehicle {
+public class Scooter extends BorrowableElectricVehicle {
 
     private int vitesseMaximum;
 

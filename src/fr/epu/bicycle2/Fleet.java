@@ -6,31 +6,31 @@ import java.util.Optional;
 
 public class Fleet {
 
-    private List<EBike> eBikeFleet;
+    private List<Trackable> trackableVehicles;
 
     public Fleet() {
-        eBikeFleet = new ArrayList<>();
+        trackableVehicles = new ArrayList<>();
     }
 
-    public void addEbikeToFleet(EBike ebike) {
-        this.eBikeFleet.add(ebike);
+    public void addVehicleToFleet(BorrowableElectricVehicle vehicle) {
+        this.trackableVehicles.add(vehicle);
     }
 
-    public List<EBike> around(Position position, int distanceMax) {
-        List<EBike> ebikesAround = new ArrayList<>();
-        for (EBike bike : this.eBikeFleet) {
-            Optional<Position> positionOptional = bike.getPosition();
+    public List<Trackable> around(Position position, int distanceMax) {
+        List<Trackable> trackableVehicleAround = new ArrayList<>();
+        for (Trackable vehicle : this.trackableVehicles) {
+            Optional<Position> positionOptional = vehicle.getPosition();
             if (positionOptional.isPresent()) {
-                Position posEbike = positionOptional.get();
-                if (posEbike.distance(position) <= distanceMax) {
-                    ebikesAround.add(bike);
+                Position posVehicle = positionOptional.get();
+                if (posVehicle.distance(position) <= distanceMax) {
+                    trackableVehicleAround.add(vehicle);
                 }
             }
         }
-        return ebikesAround;
+        return trackableVehicleAround;
     }
 
     public int numberOfVehicles() {
-        return this.eBikeFleet.size();
+        return this.trackableVehicles.size();
     }
 }

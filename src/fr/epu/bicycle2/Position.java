@@ -7,9 +7,14 @@ public class Position {
 
     private static final double EPSILON = 0.001;
 
+
+    public Position(int posX, int posY) {
+        this.x = posX;
+        this.y = posY;
+    }
+
     public Position() {
-        this.x = 0;
-        this.y = 0;
+        this(0, 0);
     }
 
 
