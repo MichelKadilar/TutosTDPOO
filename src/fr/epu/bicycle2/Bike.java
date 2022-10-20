@@ -2,8 +2,7 @@ package fr.epu.bicycle2;
 
 import java.util.Optional;
 
-public class Bike implements Trackable {
-
+public class Bike implements BorrowableVehicle {
     private Position position;
 
     public Bike() {
@@ -17,5 +16,10 @@ public class Bike implements Trackable {
 
     public void setPosition(Position position) {
         this.position = position;
+    }
+
+    @Override
+    public boolean isBorrowable() {
+        return Optional.ofNullable(this.position).isPresent();
     }
 }

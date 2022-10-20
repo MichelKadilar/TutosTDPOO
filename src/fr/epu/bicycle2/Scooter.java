@@ -7,7 +7,7 @@ package fr.epu.bicycle2;
  * @see GPS
  * @see Battery
  */
-public class Scooter extends BorrowableElectricVehicle {
+public class Scooter extends BorrowableElectricVehicle implements Borrowable {
 
     private int vitesseMaximum;
 
@@ -15,6 +15,12 @@ public class Scooter extends BorrowableElectricVehicle {
         super(300);
         this.km = 0;
         this.vitesseMaximum = vitesseMaximum;
+    }
+
+    @Override
+    public boolean isBorrowable() {
+        return !this.isBorrowed &&
+                (this.battery.getCharge() > ((double) 20 / 100) * this.battery.getMaxCharge());
     }
 
     public int getVitesseMaximum() {

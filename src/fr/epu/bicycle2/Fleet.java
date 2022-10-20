@@ -6,31 +6,31 @@ import java.util.Optional;
 
 public class Fleet {
 
-    private List<Trackable> trackableVehicles;
+    private List<BorrowableVehicle> borrowableVehicles;
 
     public Fleet() {
-        trackableVehicles = new ArrayList<>();
+        borrowableVehicles = new ArrayList<>();
     }
 
-    public void addVehicleToFleet(Trackable vehicle) {
-        this.trackableVehicles.add(vehicle);
+    public void addVehicleToFleet(BorrowableVehicle vehicle) {
+        this.borrowableVehicles.add(vehicle);
     }
 
-    public List<Trackable> around(Position position, int distanceMax) {
-        List<Trackable> trackableVehicleAround = new ArrayList<>();
-        for (Trackable vehicle : this.trackableVehicles) {
+    public List<BorrowableVehicle> around(Position position, int distanceMax) {
+        List<BorrowableVehicle> borrowableVehicleAround = new ArrayList<>();
+        for (BorrowableVehicle vehicle : this.borrowableVehicles) {
             Optional<Position> positionOptional = vehicle.getPosition();
             if (positionOptional.isPresent()) {
                 Position posVehicle = positionOptional.get();
-                if (posVehicle.distance(position) <= distanceMax) {
-                    trackableVehicleAround.add(vehicle);
+                if (posVehicle.distance(position) <= distanceMax && vehicle.isBorrowable()) {
+                    borrowableVehicleAround.add(vehicle);
                 }
             }
         }
-        return trackableVehicleAround;
+        return borrowableVehicleAround;
     }
 
     public int numberOfVehicles() {
-        return this.trackableVehicles.size();
+        return this.borrowableVehicles.size();
     }
 }
