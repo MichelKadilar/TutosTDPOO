@@ -11,9 +11,9 @@ public class ElectricVehicle implements Trackable {
     protected Battery battery;
 
 
-    public ElectricVehicle() {
+    public ElectricVehicle(int maxCharge) {
         gps = new GPS();
-        battery = new Battery(100); // valeur au hasard, 100% de charge maximum est logique pour le moment.
+        battery = new Battery(maxCharge);
     }
 
     /**

@@ -11,6 +11,7 @@ public class EBike extends BorrowableElectricVehicle {
     public static final int INITIAL_DISTANCE = 1;
 
     public EBike() {
+        super(300);
         this.km = INITIAL_DISTANCE;
     }
 }

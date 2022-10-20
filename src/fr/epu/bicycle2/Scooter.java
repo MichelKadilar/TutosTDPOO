@@ -12,6 +12,7 @@ public class Scooter extends BorrowableElectricVehicle {
     private int vitesseMaximum;
 
     public Scooter(int vitesseMaximum) {
+        super(300);
         this.km = 0;
         this.vitesseMaximum = vitesseMaximum;
     }
