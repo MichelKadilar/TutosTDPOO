@@ -3,7 +3,7 @@ package fr.epu.bicycle2;
 public abstract class BorrowableElectricVehicle extends ElectricVehicle implements BorrowableVehicle {
     protected boolean isBorrowed;
 
-    public BorrowableElectricVehicle(int maxCharge) {
+    protected BorrowableElectricVehicle(int maxCharge) {
         super(maxCharge);
         this.isBorrowed = false;
     }
